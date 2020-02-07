@@ -1,0 +1,84 @@
+@import url("reset.css"); 
+@import url("layout.css"); 
+@import url("component.css"); 
+@import url("common.css"); 
+
+@font-face { 
+    font-family: Montserrat-light; 
+    font-style: normal;
+    src: /*url(../font/Montserrat-Light.ttf) format('truetype'),*/
+         url(../font/Ubuntu-Light.ttf) format('truetype'),  
+         url(../font/NotoSansKR-Light.otf); 
+}
+
+@font-face { 
+    font-family: Montserrat; 
+    font-style: normal;
+    src: /*url(../font/Montserrat-Regular.ttf) format('truetype'),*/
+         url(../font/Ubuntu-Regular.ttf) format('truetype'), 
+         url(../font/NotoSansKR-Regular.otf);  
+    font-weight: 400; 
+}
+
+@font-face { 
+    font-family: Montserrat-bold; 
+    font-style: normal;
+    src: /*url(../font/Montserrat-Bold.ttf) format('truetype'),*/
+         url(../font/Ubuntu-Bold.ttf) format('truetype'), 
+         url(../font/NotoSansKR-Bold.otf); 
+}
+
+@font-face { 
+    font-family: Montserrat-italic; 
+    font-style: italic; 
+    src: /*url(../font/Montserrat-Italic.ttf) format('truetype'), */
+         url(../font/Ubuntu-Italic.ttf) format('truetype'); 
+}
+
+@font-face { 
+    font-family: Opensans-light; 
+    font-style: normal;
+    src: url(../font/OpenSans-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Opensans-regular; 
+    font-style: normal;
+    src: url(../font/OpenSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Opensans-bold; 
+    /* font-style: normal; */
+    src: url(../font/OpenSans-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Opensans-semibold; 
+    font-style: normal;
+    src: url(../font/OpenSans-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Opensans-italic; 
+    font-style: italic; 
+    src: url(../font/OpenSans-Italic.ttf) format('truetype');
+}
+
+@font-face { 
+    font-family: NotoSans-regular; 
+    font-style: normal; 
+    src: url(../font/NotoSansKR-Regular.otf) fotmat('truetype'); 
+}
+
+@font-face { 
+    font-family: NotoSans-bold; 
+    font-style: normal; 
+    src: url(../font/NotoSansKR-Bold.otf) fotmat('truetype'); 
+}
+
+@font-face { 
+    font-family: NotoSans-light; 
+    font-style: normal; 
+    src: url(../font/NotoSansKR-Light.otf) fotmat('truetype'); 
+}

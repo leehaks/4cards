@@ -1,0 +1,366 @@
+/* 
+    - nav component
+    1. li.nav-title span: 소제목 
+    2. a.nav-link : 링크 target
+    3. a.nav-link.nav-icon : 아이콘만 있는 경우  
+*/
+
+.nav li { 
+    padding-left: 1rem; 
+    border-left: 3px solid transparent;
+    transition: all .1s ease-in-out;
+    font-size: .875rem; 
+}
+
+.nav li.nav-tit { 
+    margin-bottom: .5rem; 
+    text-transform: uppercase;
+    color: currentColor; 
+}
+
+.nav li a { 
+    display: block;
+    padding: .5em 0; 
+    font-weight: 400;
+}
+
+.nav li:hover:not(.nav-tit), 
+.nav li.active { 
+    background: #f1effc; 
+    border-left-color: #5136d3; 
+    padding-left: 1.25rem; 
+}
+
+
+/* 
+    - button component
+    1. .btn-group : button 여러개 넣을 경우 부모요소
+    2. .btn-block, .btn-icon, btn-link, btn-border 
+    3. .btn-close, .btn-close.arrow  
+    4. .btn-sm, btn-xs 
+    5. .ripple : button 클릭효과추가 
+*/
+
+.btn-group { 
+    display: flex; 
+    display: -ms-flexbox; 
+    align-items: center; 
+    -ms-flex-align: center; 
+}
+
+.btn-group .btn { margin-left: .65rem; }
+.btn-group .btn:first-of-type { margin-left: 0; }
+
+.btn-group.col .btn { 
+    margin-left: 0; 
+    margin-top: .65rem; 
+}
+.btn-group.col .btn:first-of-type { margin-top: 0; }
+
+.btn-group.p-no .btn { 
+    margin-left: 0; 
+    border-radius: 0;
+    border-left-width: 0 !important;
+}
+
+.btn-group.p-no .btn:first-of-type { border-left-width: 1px !important; }
+
+.btn { 
+    background: transparent; 
+    min-width: 5rem; 
+    width: auto; 
+    max-width: 10rem; 
+    height: 2rem; 
+    line-height: 1.9rem; 
+    display: inline-block;  
+    padding: 0 .5em; 
+    border: none; 
+    border: 1px solid transparent; 
+    border-radius: .325rem; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    vertical-align: middle; 
+    outline: none; 
+    font-family: 'Opensans-regular', 'NanumSquare_acR', sans-serif; 
+    font-size: .875rem; 
+    color: currentColor; 
+    cursor: pointer;
+    transition: all .2s ease-in-out; 
+}
+
+.btn.radius { border-radius: 3rem; }
+
+.btn.block { 
+    width: 100%; 
+    max-width: 100%; 
+    display: block; 
+}
+
+.btn span { margin-left: .5rem; }
+
+/* ============================================================ */
+
+.btn-icon { 
+    width: 2rem; 
+    min-width: 0; 
+    padding: 0; 
+    font-size: 1rem; 
+}
+
+.btn.btn-icon.radius { border-radius: 50%; }
+
+.btn-link { 
+    min-width: 0; 
+    height: auto; 
+    line-height: 1.25rem; 
+    border-radius: 0;
+    border-color: transparent !important; 
+}
+
+.btn-link.disabled { border-bottom: 0; }
+
+.btn-block { 
+    width: 100%; 
+    max-width: 100%; 
+    display: block; 
+}
+
+.btn.btn-border:not(.disabled) { 
+    background: transparent !important; 
+    border: 1px solid currentColor; 
+}
+
+/* ============================================================ */
+
+.btn-border.primary, 
+.btn-link.primary { color:#3470a6; }
+
+.btn-border.warning, 
+.btn-link.warning { color:#f1b437; }
+
+.btn-border.danger, 
+.btn-link.danger { color:#ee352e; }
+
+.btn-border.success, 
+.btn-link.success { color:#5cc19f; }
+
+.btn-link.primary, 
+.btn-link.warning, 
+.btn-link.danger, 
+.btn-link.success,
+.btn-link.disabled { background: transparent; }
+
+/* ============================================================ */
+
+button.btn-close { 
+    background: transparent; 
+    min-width: 32px; 
+    height: 32px; 
+    border: none; 
+    transform: rotate(0);
+    transition: transform .5s ease-in-out;
+}
+
+.btn-close:not(.arrow)::before, 
+.btn-close:not(.arrow)::after { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    margin: auto; 
+    background: #fff; 
+    display: block; 
+    width: 32px; 
+    height: 3px; 
+    transition: all .3s ease-in-out; 
+}
+
+.btn-close:not(.arrow)::before { transform: rotate(45deg); }
+.btn-close:not(.arrow)::after { transform: rotate(-45deg); }
+
+/* button.btn-close:not(.arrow):hover { 
+    transform: rotate(180deg);
+} */
+
+/* ============================================================ */
+
+.btn.sm, 
+.btn-group.sm .btn { 
+    min-width: 0; 
+    height: auto; 
+    line-height: initial;
+    padding: .15em .65em;
+    font-size: .7rem; 
+}
+
+.btn.lg, 
+.btn-group.lg .btn { 
+    min-width: 7rem; 
+    width: auto; 
+    max-width: 10rem; 
+    height: 2.85rem; 
+    line-height: 2.75rem; 
+    font-size: 1.25rem; 
+}
+
+/* ============================================================ */
+
+button:not(.disabled):hover { opacity: .8; }
+
+button.ripple { 
+    position: relative;
+    overflow: hidden; 
+    transform: translate3d(0, 0, 0); 
+}
+
+button.ripple::after { 
+    content:''; 
+    display: block; 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    pointer-events: none; 
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); 
+    background-repeat: no-repeat; 
+    background-position: 50%; 
+    transform: scale(10, 10); 
+    opacity: 0; 
+    transition: transform .5s, opacity 1s; 
+}
+
+button.ripple:active::after { 
+    transform: scale(0, 0); 
+    opacity: .3;
+    transition: 0s; 
+}
+
+/* ============================================================ */
+
+/* form */
+
+form label { 
+    display: inline-block; 
+    margin-right: 1rem; 
+    font-size: .85rem; 
+    font-weight: 700;  
+    color: #454d5b; 
+}
+
+form input, 
+form select { 
+    min-width: 100px;   
+    min-height: 28px; 
+    line-height: 27px; 
+    margin-right: .75rem; 
+    padding-left: 1rem;  
+    display: inline-block; 
+    border: 1px solid #d8d8d8; 
+    border-radius: 1rem; 
+    outline: none; 
+    color: #969ea4; 
+    font-size: .85rem; 
+}
+
+.sch-box { 
+    position: relative; 
+    display: flex; 
+    display: -ms-flexbox; 
+    align-items: center; 
+    -ms-flex-align: center; 
+}
+
+.sch-box input[type="text"] { 
+    background: #f7f7f7; 
+    padding-left: 35px; 
+    border: none; 
+}
+
+.sch-box input[type="button"] { 
+    background: #1676ba; 
+    min-width: 75px; 
+    padding: 0; 
+    border: 0; 
+    color: #fff; 
+}
+
+.sch-box form::before {
+    content:''; 
+    display: block; 
+    position: absolute; 
+    top: 7px; 
+    left: 10px;  
+    width: 25px; 
+    height: 25px; 
+    background: url('../img/search_bl.png') no-repeat; 
+    background-size: 14px; 
+}
+
+.sch-box.lg input[type="text"] { min-width: 400px; }
+
+.chk-box { 
+    display: flex; 
+    display: -ms-flexbox; 
+    align-items: center; 
+    -ms-flex-align: center;
+}
+
+.chk-box label { 
+    margin-left: 2px; 
+    font-size: .85rem; 
+}
+
+select { 
+    background: url('../img/select_arrow.png') no-repeat 90%; 
+    background-size: 10px;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand { display: none; }
+
+form .input-group input { margin-left: .5rem; }
+form .input-group input:first-child { margin-left: 0; }
+
+/* table */
+
+.table-component { 
+    min-width: 280px; 
+    height: 100%; 
+    border-bottom: 1px solid #d8d8d8; 
+}
+
+.table-component table { 
+    width: 100%; 
+    border-top: 1px solid #d8d8d8;     
+}
+
+table th, table td { 
+    height: 32px; 
+    /* line-height: 32px;     */
+    vertical-align: middle;
+    color: #3f4655; 
+}
+
+table th { 
+    border-bottom: 1px solid #d8d8d8; 
+    font-size: .8rem;     
+    font-weight: 700;
+    /* font-family: 'NanumSquare_acEB', san-serif; */
+    color: #9fa2aa; 
+}
+
+table td { 
+    text-align: center; 
+    font-size: .925rem; 
+}
+
+.container.header .table-component { 
+    max-height: 132px; 
+    border-top: 1px solid #d8d8d8; 
+    border-bottom-width: 2px;
+    overflow: auto;
+}
