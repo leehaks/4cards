@@ -11,6 +11,7 @@ window.onload = function(){
     
         this.classList.replace('off','on');
         this.querySelector('.content-component').classList.remove('hidden');
+        this.querySelector('.title-component .con').classList.remove('hidden');
         currentMain = this;            
     }
     
