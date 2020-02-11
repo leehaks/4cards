@@ -126,8 +126,13 @@
 
 .text-box { 
     background: #fff; 
+    width: 350px; 
     margin-bottom: 2rem; 
     padding: 2rem; 
     border-radius: 0 .5rem .5rem 0;
     overflow: hidden;
 }
+
+/*  */
+
+.content.content-one { height: 745px; }
