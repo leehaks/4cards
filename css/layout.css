@@ -108,31 +108,19 @@
     font-size: .95rem; 
 }
 
-.title-box .tit .date-num { 
-    float: right; 
-    font-weight: 400;  
-}
-
 .title-box .con { max-width: 600px; }
 
 /* img box */
 
-.img-box { 
-    width: 320px; 
-    overflow: hidden; 
-    border-radius: .5rem; 
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
-
-.text-box { 
-    background: #fff; 
-    width: 350px; 
-    margin-bottom: 2rem; 
-    padding: 2rem; 
-    border-radius: 0 .5rem .5rem 0;
-    overflow: hidden;
-}
+.img-box { width: 320px; }
+.text-box { width: 350px; }
 
 /*  */
 
-.content.content-one { height: 745px; }
+.content.content-one,
+.content.content-two { height: 745px; }
+
+.content.content-two > div:first-of-type {
+    background: url('../img/fox_back.jpg') 0 0 no-repeat; 
+    background-size: cover; 
+}
