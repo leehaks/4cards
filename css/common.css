@@ -283,6 +283,7 @@ img {
 
 .bg-black { background: #000; }
 .bg-white { background: #fff; }
+.bg-gray { background: #ddd; }
 
 .bg-blue-grd { 
     background: linear-gradient(to right, #4b319a 25%, #5136d3);

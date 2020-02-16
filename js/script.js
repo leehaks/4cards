@@ -18,4 +18,23 @@ window.onload = function(){
     mainAnchor.forEach( anchor => {
         anchor.addEventListener('click', mainAnchorHandler)
     })
+
+    var imgAnchor = document.querySelectorAll('.slider-img'); 
+
+    function imgAnchorFrame() { 
+        imgAnchor.forEach( currentFrame => {
+            frame = currentFrame.querySelector('.main-frame')
+            
+            frameWidth = frame.getAttribute('width');
+            frameHeight = frame.getAttribute('height');
+            
+            console.log('frame', frameWidth, frameHeight); 
+
+            frame.style.width = frameWidth + "px";  
+            frame.style.height = frameHeight + "px";  
+            
+        })
+    }
+
+    imgAnchorFrame(); 
 }
