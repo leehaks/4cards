@@ -27,14 +27,35 @@ window.onload = function(){
             
             frameWidth = frame.getAttribute('width');
             frameHeight = frame.getAttribute('height');
-            
-            console.log('frame', frameWidth, frameHeight); 
 
             frame.style.width = frameWidth + "px";  
-            frame.style.height = frameHeight + "px";  
-            
+            frame.style.height = frameHeight + "px";              
         })
     }
 
     imgAnchorFrame(); 
+
+    var currentTabItem; 
+    var tabItem = document.querySelectorAll('.tab-component'); 
+
+    function activate(elem){
+        elem.classList.add('active'); 
+        currentTabItem = elem; 
+    }
+
+    function tabHandler(e) { 
+        if (currentTabItem) { 
+            currentTabItem.classList.remove('active'); 
+        }
+        e.target.classList.add('active'); 
+        activate(e.target); 
+    }
+
+    tabItem.forEach(items => { 
+        var tabFirst = items.querySelector('a')
+        activate(tabFirst); 
+        items.addEventListener('click', tabHandler); 
+    })
+
+    var scrollAction = document.querySelectorAll('.section-component')
 }

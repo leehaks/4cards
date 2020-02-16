@@ -379,10 +379,9 @@ table td {
     position: relative; 
 }
 
-.tab-component .label-group { margin-bottom: 1rem; }
 .tab-component .label-group .label-item:first-child { margin-left: 0; }
 
-.tab-component .label-group .label-item.active::before { 
+.tab-component .label-group .label-item a.active::before { 
     content: ''; 
     display: block; 
     background: #3470a6; 
@@ -392,3 +391,30 @@ table td {
     left: 0; 
     bottom: 0; 
 }
+
+.slider-img { position: relative; }
+
+.slider-img .main-frame, 
+.slider-img ul li { 
+    border-radius: .5rem;
+    overflow: hidden; 
+}
+
+.slider-img ul { 
+    display: flex; 
+    display: -ms-flexbox;
+}
+
+.slider-img ul { 
+    position: absolute; 
+    right: 0; 
+    bottom: -3rem; 
+}
+
+.slider-img ul li { 
+    width: 215px; 
+    margin-left: 1rem; 
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.slider-img ul li:first-child { margin-left: 0; }
