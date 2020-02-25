@@ -36,26 +36,31 @@ window.onload = function(){
     imgAnchorFrame(); 
 
     var currentTabItem; 
-    var tabItem = document.querySelectorAll('.tab-component'); 
+    var tabComponent = document.querySelectorAll('.tab-component'); 
 
-    function activate(elem){
+    function active(elem){
         elem.classList.add('active'); 
         currentTabItem = elem; 
     }
 
-    function tabHandler(e) { 
-        if (currentTabItem) { 
-            currentTabItem.classList.remove('active'); 
-        }
-        e.target.classList.add('active'); 
-        activate(e.target); 
+    function nonActive(elem){ 
+        elem.classList.remove('active'); 
     }
 
-    tabItem.forEach(items => { 
-        var tabFirst = items.querySelector('a')
-        activate(tabFirst); 
+    function tabHandler(e) { 
+        if (currentTabItem) { 
+            nonActive(currentTabItem); 
+        }
+        active(e.target); 
+    }
+
+    tabComponent.forEach(items => { 
+        var tabLabelFirst = items.querySelector('.label-item'); 
+        var tabPanelFirst = items.querySelector('.panel'); 
+
+        active(tabLabelFirst); 
+        active(tabPanelFirst); 
         items.addEventListener('click', tabHandler); 
     })
-
-    var scrollAction = document.querySelectorAll('.section-component')
+    
 }
