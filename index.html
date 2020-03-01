@@ -62,7 +62,19 @@
                     <div class="close-box">
                         <button class="btn-close"></button>
                     </div>
+
+                    <div class="navbar">
+                        <ul>
+                            <li><a href="#foxTitle"></a></li>
+                            <li><a href="#foxSlider"></a></li>
+                            <li><a href="#foxTab"></a></li>
+                        </ul>
+                    </div>
+
                     <div class="section-box">
+
+                        <!-- 1 Deps Content 내용 -->
+
                         <div class="title-component">
                             <div class="title-box">
                                 <div class="tit">
@@ -77,51 +89,104 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content-component hidden">
-                            <div class="content content-one p-20">
-                                <ul class="flex items-end h-full">
-                                    <li class="img-box mr-10 shadow-2 radius-2 overflow-hidden">
-                                        <img src="img/wolf-sub-2.png">
+
+                        <!-- 2 Deps Content 내용 -->
+
+                        <div class="content-component relative hidden">                           
+
+                            <div id="foxTitle" class="content content-one">
+                                <div class="title-box">
+                                    <div class="tit">
+                                        <span>Fox Stage</span>
+                                        <h3><strong>F</strong>ox rampages through Phippsburg neighborhood</h3>
+                                    </div>
+                                    <div class="con">
+                                        <p class="text-sm">Although wildlife experts have 
+                                            predicted rabid animal attacks would decrease over 
+                                            the winter, there was yet another fox attack in the southern 
+                                            Midcoast Tuesday.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- slider-component 적용페이지 -->
+
+                            <div id="foxSlider" class="content content-two p-20">
+                                <ul class="img-box-group flex h-full items-center justify-center p-10">
+                                    <li class="img-box mr-15 shadow-2 radius-2 overflow-hidden">
+                                        <img src="img/wolf-sub-1.png">
+                                        <div class="bg-white p-10">
+                                            <h5 class="mb-5"><strong>Red Fox</strong></h5>    
+                                            <p>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="img-box mr-15 radius-2 shadow-2 overflow-hidden">
+                                        <img src="img/wolf-sub-4.png">
+                                        <div class="bg-white p-10">
+                                            <h5 class="mb-5"><strong>Arctic Fox</strong></h5>    
+                                            <p>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="img-box mr-15 radius-2 shadow-2 overflow-hidden">
+                                        <img src="img/wolf-sub-3.png">
+                                        <div class="bg-white p-10">
+                                            <h5 class="mb-5"><strong>Gray Fox</strong></h5>    
+                                            <p>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                            </p>
+                                        </div>
                                     </li>
                                     <li class="img-box radius-2 shadow-2 overflow-hidden">
-                                        <img src="img/wolf-sub-1.png">
-                                    </li>
-                                    <li class="text-box bg-white radius-2 p-20 ml-auto h-full">
-                                        <h3 class="mb-10"><strong>Three fox attacks</strong> in West Bath already this year.</h3> 
-                                        <p>
-                                            Lindsey Goudreau, Bath’s marketing and communication specialist, 
-                                            said the city council will discuss trapping options Wednesday, 
-                                            including estimated costs. Goudreau said the traps would not 
-                                            be lethal, to prevent accidents involving pets, but wild 
-                                            animals caught in the traps would be euthanized. </p>
+                                        <img src="img/wolf-sub-2.png">
+                                        <div class="bg-white p-10">
+                                            <h5 class="mb-5"><strong>Fennec Fox</strong></h5>    
+                                            <p>
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                            </p>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="content content-two flex">
-                                <div class="flex-1">
-                                </div>
+
+                            <!-- tab-component 적용페이지 -->
+
+                            <div id="foxTab" class="content content-three flex">
+                                <div class="main-image flex-1"></div>
                                 <div class="bg-white p-20 flex-2">
                                     <div class="tab-component">
-                                        <ul class="label-group mb-20">
-                                            <li class="label-item"><a class="active">Tab1</a></li>
-                                            <li class="label-item"><a>Tab2</a></li>
-                                            <li class="label-item"><a>Tab3</a></li>
-                                        </ul>
-                                        <div class="panel">
-                                            <h3 class="mb-10"><strong>Fox rampages</strong> through Phippsburg neighborhood <br/>Phippsburg neighborhood</h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                        <div class="tab-label-group mb-15">
+                                            <ul>
+                                                <li><a href="#tabTest1" class="tab-label">INTRO</a></li>
+                                                <li><a href="#tabTest2" class="tab-label">NEWS</a></li>
+                                                <li><a href="#tabTest3" class="tab-label">IMAGES</a></li>
+                                            </ul>
+                                        </div>
+                                        <div id="tabTest1" class="tab-panel">
+                                            <h4 class="mb-15"><strong>Fox rampages</strong> through Phippsburg neighborhood <br/>Phippsburg neighborhood</h4>
+                                            <p class="column-width mb-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                                                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                                                 when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
                                                 It has survived not only five centuries, but also the leap into electronic typesetting, 
                                                 remaining essentially unchanged. It was popularised in the 1960s 
-                                                with the release of Letraset sheets containing Lorem Ipsum passages, 
-                                                and more recently with desktop publishing software like Aldus PageMaker 
-                                                including versions of Lorem Ipsum.</p>
+                                                with the release of Letraset sheets containing Lorem Ipsum passages.
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                                when an unknown printer took a galley of type and scrambled it to make a type specimen book.       
+                                                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.                                           
+                                            </p>
                                             <div class="slider-img mt-20">
-                                                <div class="main-frame bg-gray" width="500" height="350">
-                                                    <img src="img/slider-fox-1.jpg" alt="fox-image" />
-                                                </div>
                                                 <ul>
+                                                    <li>
+                                                        <img src="img/slider-fox-1.jpg" alt="fox-image" />
+                                                    </li>
                                                     <li>
                                                         <img src="img/slider-fox-2.jpg" alt="fox-image-2">
                                                     </li>
@@ -134,8 +199,8 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="panel"></div>
-                                        <div class="panel"></div>
+                                        <div id="tabTest2" class="tab-panel"></div>
+                                        <div id="tabTest3" class="tab-panel"></div>
                                     </div>
                                 </div>
                             </div>
