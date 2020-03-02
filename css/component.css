@@ -472,9 +472,13 @@ table td {
 .img-box-group li:nth-child(2n) { margin-top: 2rem; }
 .img-box { max-width: 285px; }
 
-.column-width { 
-    column-width: 250px;
-    column-gap: 1.75em; 
-    text-align: justify;
-    letter-spacing: -.025rem;
+
+.number-component {
+    position: absolute;
+    bottom: 2em; 
+    left: 2em
+}
+
+.number-component ul {
+    display: flex;
 }
