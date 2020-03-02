@@ -97,24 +97,42 @@ window.onload = function(){
     }
 
     let currentHeight = 0; 
+    let isScrolling = false;
 
     function scrollHandler(e) { 
         e.preventDefault();
         
-        let scrollHeight = this.getBoundingClientRect().height; 
+        let scrollHeight = this.getBoundingClientRect().height, 
+        minHeight = 0, 
+        maxHeight = (this.querySelectorAll(".content").length - 1) * scrollHeight;
+        
+        if(!isScrolling) {
 
-        if(e.deltaY > 0) {
-            this.scrollTo({
-                top: currentHeight += scrollHeight, 
-                behavior: "smooth"
-            });  
-        }else{
-            this.scrollTo({
-                top: currentHeight -= scrollHeight, 
-                behavior: "smooth"
-            }); 
+            isScrolling = true;
+
+            if(e.deltaY > 0) {
+                currentHeight = currentHeight + scrollHeight;
+                currentHeight = currentHeight > maxHeight ? maxHeight : currentHeight;
+                this.scrollTo({
+                    top: currentHeight, 
+                    behavior: "smooth"
+                }); 
+            }else{
+                currentHeight = currentHeight - scrollHeight;
+                currentHeight = currentHeight < minHeight ? minHeight : currentHeight;
+                this.scrollTo({
+                    top: currentHeight, 
+                    behavior: "smooth"
+                }); 
+            }
+
+            var checkScrolling = setInterval(() => {
+                if(this.scrollTop == currentHeight) {
+                    isScrolling = false;
+                    clearInterval(checkScrolling);
+                }
+            }, 50);
         }
     }
-
     sectionElem.forEach( elem => elem.addEventListener('mousewheel', scrollHandler));
 }
