@@ -1,18 +1,34 @@
 window.onload = function(){
 
-    var currentMain; 
-    var mainAnchor = document.querySelectorAll('.section-component');
+    let currentMain; 
+    let mainAnchor = document.querySelectorAll('.section-component');
     
-    function mainAnchorHandler() { 
     
-        mainAnchor.forEach( allAnchor => { 
-            allAnchor.classList.add('off');
-        })
-    
-        this.classList.replace('off','on');
-        this.querySelector('.content-component').classList.remove('hidden');
-        this.querySelector('.title-component').classList.add('hidden');
-        currentMain = this;            
+    function mainAnchorHandler(e) { 
+        
+        console.log(e.target)
+        let closeBtn = e.target.classList.contains('btn-close')
+       
+        if(!closeBtn) { 
+            mainAnchor.forEach( allAnchor => { 
+                allAnchor.classList.add('off');
+            })
+        
+            this.classList.replace('off','on');
+            this.querySelector('.content-component').classList.remove('hidden');
+            this.querySelector('.title-component').classList.add('hidden');
+            this.querySelector('.navbar').classList.add('on')
+            currentMain = this;            
+        }else{
+            mainAnchor.forEach( allAnchor => { 
+                allAnchor.classList.remove('off');
+            })
+            this.classList.remove('on'); 
+            this.querySelector('.content-component').classList.add('hidden');
+            this.querySelector('.title-component').classList.remove('hidden');
+            this.querySelector('.navbar').classList.remove('on') 
+        }
+        
     }
     
     mainAnchor.forEach( anchor => {
@@ -21,8 +37,8 @@ window.onload = function(){
 
     // tab-component
 
-    var currentTabLabel, currentTabPanel; 
-    var tabComponent = document.querySelectorAll('.tab-component'); 
+    let currentTabLabel, currentTabPanel; 
+    let tabComponent = document.querySelectorAll('.tab-component'); 
 
     function activate(elem){
         elem.classList.add('active'); 
@@ -126,7 +142,7 @@ window.onload = function(){
                 }); 
             }
 
-            var checkScrolling = setInterval(() => {
+            let checkScrolling = setInterval(() => {
                 if(this.scrollTop == currentHeight) {
                     isScrolling = false;
                     clearInterval(checkScrolling);
