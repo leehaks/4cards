@@ -56,7 +56,7 @@
 .section-component.off .title-component { background: #fff; }
 
 .section-box {
-    width: 100%; 
+    width: calc(100% + 17px); 
     height: 100%; 
     overflow: hidden auto; 
     position: relative;
