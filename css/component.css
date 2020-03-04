@@ -478,6 +478,8 @@ table td {
     box-shadow: 0 0 3px rgba(0,0,0,0.25);
 }
 
+.navbar ul li a.active { background: #faae36; }
+
 .navbar ul li { margin-top: .825em; }
 .navbar ul li:first-child { margin-top: 0; }
 
@@ -536,6 +538,11 @@ table td {
     font-size: .85rem; 
 }
 
+.accordion-btn.active, 
+.accordion-btn:hover { 
+    background: #feefd7; 
+} 
+
 .accordion-btn .accordion-num { 
     display: block;  
     margin-right: .75rem;
@@ -559,6 +566,9 @@ table td {
     padding: 1.5em 1em; 
     border-bottom: 1px solid #ddd; 
     display: none; 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height .5s ease-in-out; 
 }
 
 .profile-box { 
