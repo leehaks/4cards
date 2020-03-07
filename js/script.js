@@ -97,11 +97,15 @@ window.onload = function(){
 
     let sectionElem = document.querySelectorAll('.section-component .section-box'); 
     let navbarLinks = document.querySelectorAll('.navbar a')
+    let navbarCurrent 
 
     navbarLinks.forEach(elem => elem.addEventListener('click', navbarLinkClick));
 
     function navbarLinkClick(e) { 
         event.preventDefault();
+        
+        this.classList.add('active'); 
+
         let targetId = e.currentTarget.getAttribute('href'); 
 
         sectionElem.forEach( elem => { 
