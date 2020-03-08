@@ -89,6 +89,9 @@
     transition: all .2s ease-in-out; 
 }
 
+button:focus, 
+a:focus { outline: none; }
+
 .btn.radius { border-radius: 3rem; }
 
 .btn.block { 
@@ -175,6 +178,7 @@ button.btn-close {
     display: block; 
     width: 32px; 
     height: 3px; 
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.35); 
     transition: all .3s ease-in-out; 
 }
 
@@ -463,8 +467,7 @@ table td {
     top: 50%; 
     margin: auto; 
     z-index: 10;
-    transition: right .75s ease-in-out; 
-    transition-delay: .25s;
+    transition: right .75s ease-in-out .25s; 
 }
 
 .navbar.on { right: 1em; }
@@ -493,15 +496,28 @@ table td {
 
 .number-component {
     position: absolute;
-    bottom: 2em; 
+    bottom: -4em; 
     right: 2em;
     color: #fff; 
+    transition: bottom .75s ease-in-out .25s; 
 }
+
+.number-component.active{ bottom: 2em; }
 
 .number-component ul { display: flex; }
 
-.number-component ul li { margin-left: 2rem; }
-.number-component ul li:first-child { margin-left: 0; }
+.number-component ul li { 
+    position: relative; 
+    margin-left: 2rem; 
+    transition: top .5s ease-in-out; 
+}
+
+.number-component ul li:nth-child(1) { top: 10px; transition-delay: .5s; margin-left: 0;}
+.number-component ul li:nth-child(2) { top: 30px; transition-delay: .75s;}
+.number-component ul li:nth-child(3) { top: 50px; transition-delay: 1s;}
+.number-component ul li:nth-child(4) { top: 70px; transition-delay: 1.25s;}
+
+.number-component.active ul li { top: 0; }
 
 .number-component span.total-num { 
     font-size: 2.75rem; 
@@ -526,7 +542,7 @@ table td {
 .accordion-group .accordion-component:first-child { margin-top: 0; }
 
 .accordion-btn { 
-    background: #fff; 
+    background: #fff0d7; 
     width: 100%; 
     display: flex; 
     align-items: center; 
@@ -550,7 +566,7 @@ table td {
     border-right: 1px solid #ddd; 
     font-weight: 700; 
     font-size: 1.25rem; 
-    color: #aaa; 
+    color: #525252; 
 }
 .accordion-btn .arrow-btn { 
     line-height: 0; 

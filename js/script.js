@@ -17,7 +17,8 @@ window.onload = function(){
             this.classList.replace('off','on');
             this.querySelector('.content-component').classList.remove('hidden');
             this.querySelector('.title-component').classList.add('hidden');
-            this.querySelector('.navbar').classList.add('on')
+            this.querySelector('.navbar').classList.add('on');
+            this.querySelector('.number-component').classList.add('active');
             currentMain = this;            
         }else{
             mainAnchor.forEach( allAnchor => { 
@@ -26,7 +27,8 @@ window.onload = function(){
             this.classList.remove('on'); 
             this.querySelector('.content-component').classList.add('hidden');
             this.querySelector('.title-component').classList.remove('hidden');
-            this.querySelector('.navbar').classList.remove('on') 
+            this.querySelector('.navbar').classList.remove('on');
+            this.querySelector('.number-component').classList.remove('active');
         }
         
     }
@@ -96,63 +98,113 @@ window.onload = function(){
     // scroll 
 
     let sectionElem = document.querySelectorAll('.section-component .section-box'); 
-    let navbarLinks = document.querySelectorAll('.navbar a')
+    let navbarLinks = document.querySelectorAll('.navbar')
     let navbarCurrent 
 
-    navbarLinks.forEach(elem => elem.addEventListener('click', navbarLinkClick));
+    function activateScroll(elem){
+        elem.classList.add('active'); 
+        navbarCurrent = elem; 
+    }
+
+    navbarLinks.forEach(elem => {
+        let navbarFirst = elem.querySelector('ul li a')
+        activateScroll(navbarFirst)
+        elem.addEventListener('click', navbarLinkClick)
+    });
 
     function navbarLinkClick(e) { 
         event.preventDefault();
         
-        this.classList.add('active'); 
+        const navbarHandler = e.target 
+        const navbarItem = navbarHandler.classList.contains('navbar-item'); 
 
-        let targetId = e.currentTarget.getAttribute('href'); 
+        if(navbarItem) { 
+            navbarCurrent.classList.remove('active')
+            navbarHandler.classList.add('active'); 
+            navbarCurrent = navbarHandler
 
-        sectionElem.forEach( elem => { 
-            elem.scrollTo({
-                top: document.querySelector(targetId).offsetTop, 
-                behavior: "smooth"
-            }) ; 
-        }) 
+            let targetId = navbarHandler.getAttribute('href'); 
+            
+            sectionElem.forEach( elem => { 
+                elem.scrollTo({
+                    top: document.querySelector(targetId).offsetTop, 
+                    behavior: "smooth"
+                }) ; 
+            }) 
+        }
     }
 
     let currentHeight = 0; 
-    let isScrolling = false;
+    let isScrolling = false; 
 
     function scrollHandler(e) { 
-        e.preventDefault();
+        e.preventDefault();        
         
-        let scrollHeight = this.getBoundingClientRect().height, 
-        minHeight = 0, 
-        maxHeight = (this.querySelectorAll(".content").length - 1) * scrollHeight;
-        
-        if(!isScrolling) {
+        let scrollPanel = this.querySelectorAll(".content");
+        let scrollHeight = this.getBoundingClientRect().height;
 
-            isScrolling = true;
+        let minHeight = 0;
+        let maxHeight = (scrollPanel.length - 1) * scrollHeight;
 
-            if(e.deltaY > 0) {
-                currentHeight = currentHeight + scrollHeight;
-                currentHeight = currentHeight > maxHeight ? maxHeight : currentHeight;
-                this.scrollTo({
-                    top: currentHeight, 
-                    behavior: "smooth"
-                }); 
-            }else{
-                currentHeight = currentHeight - scrollHeight;
-                currentHeight = currentHeight < minHeight ? minHeight : currentHeight;
-                this.scrollTo({
-                    top: currentHeight, 
-                    behavior: "smooth"
-                }); 
+        if(e.deltaY > 0 ) { 
+            currentHeight = currentHeight + scrollHeight; 
+            currentHeight = currentHeight > maxHeight ? maxHeight : currentHeight;
+            this.scrollTo({
+                top: currentHeight, 
+                behavior: "smooth"
+            })
+        }else{
+            currentHeight = currentHeight - scrollHeight;
+            currentHeight = currentHeight < minHeight ? minHeight : currentHeight;
+            this.scrollTo({
+                top: currentHeight, 
+                behavior: "smooth"
+            })
+        }                  
+
+        scrollPanel.forEach( elem => {
+            console.log(elem.offsetTop, currentHeight)
+            let panelId = '#' + elem.getAttribute('id'); 
+            
+            if(elem.offsetTop == currentHeight) { 
+                let currentNav = document.querySelector('.navbar a[href="'+panelId+'"]')
+                if(navbarCurrent) navbarCurrent.classList.remove('active')
+                activateScroll(currentNav)
+                document.querySelector(panelId).classList.add('active')
             }
+        })        
 
-            let checkScrolling = setInterval(() => {
-                if(this.scrollTop == currentHeight) {
-                    isScrolling = false;
-                    clearInterval(checkScrolling);
-                }
-            }, 50);
-        }
+        // minHeight = 0, 
+        // maxHeight = (this.querySelectorAll(".content").length - 1) * scrollHeight;
+        
+        // if(!isScrolling) {
+
+        //     isScrolling = true;
+
+        //     if(e.deltaY > 0) {
+        //         currentHeight = currentHeight + scrollHeight;
+        //         currentHeight = currentHeight > maxHeight ? maxHeight : currentHeight;
+        //         this.scrollTo({
+        //             top: currentHeight, 
+        //             behavior: "smooth"
+        //         }); 
+        //     }else{
+        //         currentHeight = currentHeight - scrollHeight;
+        //         currentHeight = currentHeight < minHeight ? minHeight : currentHeight;
+        //         this.scrollTo({
+        //             top: currentHeight, 
+        //             behavior: "smooth"
+        //         }); 
+        //     }
+
+        //     let checkScrolling = setInterval(() => {
+        //         if(this.scrollTop == currentHeight) {
+        //             isScrolling = false;
+        //             clearInterval(checkScrolling);
+        //         }
+        //     }, 50);
+        // }
     }
+
     sectionElem.forEach( elem => elem.addEventListener('mousewheel', scrollHandler));
 }

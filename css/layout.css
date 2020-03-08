@@ -83,10 +83,7 @@
     color: #fff;     
 } 
 
-.title-box .tit { 
-    max-width: 300px; 
-    margin-bottom: 1rem; 
-}
+.title-box .tit { max-width: 300px; }
 
 .title-box .tit::before { 
     content: ''; 
@@ -99,7 +96,7 @@
 
 .title-box .tit span {
     display: block; 
-    margin-bottom: .75rem;  
+    margin-bottom: .5rem;  
     font-weight: 400; 
     font-size: .95rem; 
 }
